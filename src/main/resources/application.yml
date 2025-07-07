@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: Mokito
+
+  datasource:
+    url: jdbc:h2:mem:test
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update # or `create-drop` for tests
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  sql:
+    init:
+      platform: h2
+      mode: always
+
+server:
+  port: 10000
